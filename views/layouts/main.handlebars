@@ -4,32 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gineerblog</title>
-
-  {{!-- <title><img src="assets/img/gineerblog-logo.jpg" type="button" id="homepage" width="50%"></title> --}}
-  
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Echeriri News</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
   <div class="wrapper">
     <header>
       <h1>
-        <a href="/">gineerblog</a>
+        <a href="/">Echeriri News</a>
       </h1>
+
+{{!-- THIS  WILL WORK TO SETUP HEADER AND FOOTER ICONS --}}
+<nav>
+  {{#if loggedIn}}
+  <a href="/dashboard">dashboard</a>
+  <button id="logout" class="btn-no-style">logout</button>
+  {{else}}
+  <a href="/login">login</a>
+  {{/if}}
+</nav>
+
     </header>
     <main>
-
-
       {{{ body }}}
-
-
     </main>
     <footer>
       Thanks for visiting!
     </footer>
   </div>
+  
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  <script src="/javascript/add-post.js"></script>
 
+  {{/if}}
 </body>
 
 </html>

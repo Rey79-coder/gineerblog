@@ -1,3 +1,10 @@
-   {{!-- {{{ body }}} --}}
+<ol class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    {{> post-info post }}
+{{!-- To use a partial, all we need is the > character
+      Followed by the name of the partial --}}
 
-<div>You are on the homepage</div>
+  </li>
+  {{/each}}
+</ol>
